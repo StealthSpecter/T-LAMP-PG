@@ -1,0 +1,420 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2761
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww9680\viewh6580\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 ================================================================\
+T-LAMP-PG - COMPLETE SETUP GUIDE\
+================================================================\
+\
+Developer: Samiksha Deb (B22CS029, NIT Meghalaya)\
+Internship: PGCIL NER, August-December 2025\
+\
+This guide will help you run the T-LAMP-PG application from scratch.\
+\
+================================================================\
+PART 1: INSTALL PREREQUISITES\
+================================================================\
+\
+Before starting, install these on your computer:\
+\
+-------------------\
+1. PYTHON 3.10+\
+-------------------\
+\
+Windows:\
+1. Go to: https://www.python.org/downloads/\
+2. Download Python 3.10 or higher\
+3. Run installer\
+4. CHECK "Add Python to PATH" (IMPORTANT!)\
+5. Click "Install Now"\
+6. Verify: Open Command Prompt and type:\
+   python --version\
+   (Should show: Python 3.10.x or higher)\
+\
+Mac:\
+1. Open Terminal\
+2. Install Homebrew (if not installed):\
+   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"\
+3. Install Python:\
+   brew install python@3.10\
+4. Verify:\
+   python3 --version\
+\
+Linux (Ubuntu/Debian):\
+   sudo apt update\
+   sudo apt install python3.10 python3-pip python3-venv\
+   python3 --version\
+\
+-------------------\
+2. NODE.JS 16+\
+-------------------\
+\
+Windows:\
+1. Go to: https://nodejs.org/\
+2. Download LTS version (Long Term Support)\
+3. Run installer with default settings\
+4. Verify: Open Command Prompt and type:\
+   node --version\
+   npm --version\
+\
+Mac:\
+   brew install node\
+   node --version\
+   npm --version\
+\
+Linux:\
+   curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -\
+   sudo apt-get install -y nodejs\
+   node --version\
+   npm --version\
+\
+-------------------\
+3. CODE EDITOR (Optional but Recommended)\
+-------------------\
+\
+Download VS Code: https://code.visualstudio.com/\
+This makes it easier to view and edit code.\
+\
+================================================================\
+PART 2: BACKEND SETUP\
+================================================================\
+\
+Open terminal/command prompt in the 'backend' folder.\
+\
+-------------------\
+STEP 1: Create Virtual Environment\
+-------------------\
+\
+Windows:\
+    python -m venv venv\
+\
+Mac/Linux:\
+    python3 -m venv venv\
+\
+This creates a folder called 'venv' - don't delete it!\
+\
+-------------------\
+STEP 2: Activate Virtual Environment\
+-------------------\
+\
+Windows (Command Prompt):\
+    venv\\Scripts\\activate\
+\
+Windows (PowerShell):\
+    venv\\Scripts\\Activate.ps1\
+\
+Mac/Linux:\
+    source venv/bin/activate\
+\
+You should see (venv) at the start of your terminal line.\
+\
+-------------------\
+STEP 3: Install Python Packages\
+-------------------\
+\
+Copy and paste this entire command:\
+\
+pip install fastapi==0.104.1 uvicorn[standard]==0.24.0 sqlalchemy==2.0.23 pydantic==2.5.0 python-jose[cryptography]==3.3.0 passlib[bcrypt]==1.7.4 python-multipart==0.0.6 pandas==2.1.3 scikit-learn==1.3.2 numpy==1.26.2\
+\
+This will take 2-5 minutes. Wait for it to finish.\
+\
+If you see errors, try:\
+    pip install --upgrade pip\
+Then run the install command again.\
+\
+-------------------\
+STEP 4: Initialize Database\
+-------------------\
+\
+Run ONE of these commands (whichever exists in your backend folder):\
+\
+    python create_db.py\
+    OR\
+    python seed_data.py\
+    OR\
+    python init_db.py\
+\
+This creates the database file (powergrid.db).\
+\
+-------------------\
+STEP 5: Start Backend Server\
+-------------------\
+\
+Run:\
+    uvicorn main:app --reload --host 0.0.0.0 --port 8000\
+\
+You should see:\
+    INFO:     Uvicorn running on http://0.0.0.0:8000\
+    INFO:     Application startup complete.\
+\
+ Backend is now running!\
+\
+Test it: Open browser and go to http://localhost:8000/docs\
+You should see API documentation.\
+\
+\uc0\u9888 \u65039  KEEP THIS TERMINAL WINDOW OPEN! Don't close it.\
+\
+================================================================\
+PART 3: FRONTEND SETUP\
+================================================================\
+\
+Open a NEW terminal/command prompt in the 'frontend' folder.\
+(Keep the backend terminal running!)\
+\
+-------------------\
+STEP 1: Install Node Packages\
+-------------------\
+\
+Run:\
+    npm install\
+\
+This will take 3-10 minutes. It downloads all required libraries.\
+\
+You'll see lots of text scrolling - this is normal!\
+\
+If you see "npm: command not found", go back and install Node.js properly.\
+\
+-------------------\
+STEP 2: Start Frontend Server\
+-------------------\
+\
+Run:\
+    npm start\
+\
+After 20-30 seconds, you should see:\
+    Compiled successfully!\
+    Local: http://localhost:3000\
+\
+\uc0\u9989  A browser window will automatically open to http://localhost:3000\
+\
+\uc0\u9888 \u65039  KEEP THIS TERMINAL WINDOW OPEN TOO!\
+\
+================================================================\
+PART 4: LOGIN & USE THE APPLICATION\
+================================================================\
+\
+On the login page:\
+\
+Username: admin@powergrid.in\
+Password: admin123\
+\
+Click "Login" - you should see the dashboard!\
+\
+================================================================\
+COMMON PROBLEMS & SOLUTIONS\
+================================================================\
+\
+-------------------\
+PROBLEM: "Python is not recognized"\
+-------------------\
+SOLUTION:\
+- You didn't check "Add Python to PATH" during installation\
+- Uninstall Python and reinstall, checking that box\
+- OR add Python to PATH manually:\
+  Windows: Search "Environment Variables" \uc0\u8594  Edit PATH \u8594  Add Python folder\
+\
+-------------------\
+PROBLEM: "pip is not recognized"\
+-------------------\
+SOLUTION:\
+    python -m pip install --upgrade pip\
+    OR\
+    python -m ensurepip --upgrade\
+\
+-------------------\
+PROBLEM: "venv\\Scripts\\activate" doesn't work\
+-------------------\
+SOLUTION (Windows PowerShell):\
+- Run PowerShell as Administrator\
+- Type: Set-ExecutionPolicy RemoteSigned\
+- Press Y\
+- Try activating again\
+\
+-------------------\
+PROBLEM: "Port 8000 already in use"\
+-------------------\
+SOLUTION:\
+Windows:\
+    netstat -ano | findstr :8000\
+    taskkill /PID <number> /F\
+\
+Mac/Linux:\
+    lsof -ti:8000 | xargs kill -9\
+\
+OR just use a different port:\
+    uvicorn main:app --reload --port 8001\
+    (Then update frontend to use port 8001)\
+\
+-------------------\
+PROBLEM: "Port 3000 already in use"\
+-------------------\
+SOLUTION:\
+- Type 'Y' when asked if you want to use a different port\
+- OR close other programs using port 3000\
+\
+-------------------\
+PROBLEM: "Module not found" errors\
+-------------------\
+SOLUTION:\
+1. Make sure (venv) shows in terminal\
+2. If not, activate it again:\
+   Windows: venv\\Scripts\\activate\
+   Mac/Linux: source venv/bin/activate\
+3. Reinstall packages:\
+   pip install fastapi uvicorn sqlalchemy pydantic python-jose passlib python-multipart pandas scikit-learn numpy\
+\
+-------------------\
+PROBLEM: Database errors / "table does not exist"\
+-------------------\
+SOLUTION:\
+1. Stop backend (Ctrl+C)\
+2. Delete powergrid.db file\
+3. Run: python create_db.py (or seed_data.py)\
+4. Start backend again\
+\
+-------------------\
+PROBLEM: Frontend won't start / errors during npm install\
+-------------------\
+SOLUTION:\
+1. Delete node_modules folder\
+2. Delete package-lock.json file\
+3. Run: npm install\
+4. Run: npm start\
+\
+-------------------\
+PROBLEM: Blank page / "Cannot connect to server"\
+-------------------\
+SOLUTION:\
+- Make sure BOTH backend and frontend are running\
+- Check backend is at http://localhost:8000/docs\
+- Check frontend is at http://localhost:3000\
+- Try restarting both servers\
+\
+-------------------\
+PROBLEM: Can't login / "Invalid credentials"\
+-------------------\
+SOLUTION:\
+- Try: admin / admin123\
+- If database is fresh, try: viewer / viewer123\
+- Check backend terminal for error messages\
+- Recreate database: python create_db.py\
+\
+================================================================\
+SYSTEM REQUIREMENTS\
+================================================================\
+\
+Minimum:\
+- 4GB RAM\
+- 2GB free disk space\
+- Windows 10/11, macOS 10.15+, or Ubuntu 20.04+\
+- Internet connection (for installing packages)\
+\
+Recommended:\
+- 8GB RAM\
+- 5GB free disk space\
+- Modern processor (Intel i3 or equivalent)\
+\
+================================================================\
+WHAT THE APPLICATION DOES\
+================================================================\
+\
+T-LAMP-PG is a transmission line asset management system with:\
+\
+\uc0\u10003  Dashboard with real-time statistics\
+\uc0\u10003  GIS mapping of transmission lines and towers\
+\uc0\u10003  Incident management and tracking\
+\uc0\u10003  Predictive maintenance using AI\
+\uc0\u10003  Availability data tracking (MOU compliance)\
+\uc0\u10003  AI chatbot for queries\
+\uc0\u10003  Bilingual interface (English/Hindi)\
+\
+================================================================\
+STOPPING THE APPLICATION\
+================================================================\
+\
+To stop:\
+1. Go to backend terminal \uc0\u8594  Press Ctrl+C\
+2. Go to frontend terminal \uc0\u8594  Press Ctrl+C\
+\
+To restart:\
+1. Backend: uvicorn main:app --reload\
+2. Frontend: npm start\
+\
+================================================================\
+FOLDER STRUCTURE\
+================================================================\
+\
+powergrid-portal/\
+\uc0\u9500 \u9472 \u9472  backend/\
+\uc0\u9474    \u9500 \u9472 \u9472  main.py              (Main backend file)\
+\uc0\u9474    \u9500 \u9472 \u9472  database.py          (Database config)\
+\uc0\u9474    \u9500 \u9472 \u9472  auth.py              (Authentication)\
+\uc0\u9474    \u9500 \u9472 \u9472  ai_models/           (ML models)\
+\uc0\u9474    \u9500 \u9472 \u9472  powergrid.db         (SQLite database)\
+\uc0\u9474    \u9492 \u9472 \u9472  venv/                (Virtual environment - don't touch!)\
+\uc0\u9474 \
+\uc0\u9492 \u9472 \u9472  frontend/\
+    \uc0\u9500 \u9472 \u9472  src/                 (React source code)\
+    \uc0\u9500 \u9472 \u9472  public/              (Static files)\
+    \uc0\u9500 \u9472 \u9472  package.json         (Node dependencies)\
+    \uc0\u9492 \u9472 \u9472  node_modules/        (Installed packages - don't touch!)\
+\
+================================================================\
+FOR PRODUCTION DEPLOYMENT\
+================================================================\
+\
+This setup is for DEVELOPMENT/TESTING only.\
+\
+For production deployment on PGCIL servers with Oracle database:\
+\
+- Requires: Oracle Database, Linux server, Nginx, SSL certificates\
+- Migration from SQLite to Oracle takes 3-5 days\
+\
+================================================================\
+TESTING CHECKLIST\
+================================================================\
+\
+After setup, verify these features work:\
+\
+\uc0\u9633  Login with admin credentials\
+\uc0\u9633  Dashboard shows statistics\
+\uc0\u9633  GIS map displays (requires internet)\
+\uc0\u9633  Can add a new transmission line\
+\uc0\u9633  Can record a tripping incident\
+\uc0\u9633  AI chatbot responds to queries\
+\uc0\u9633  Can switch language to Hindi\
+\
+If all work, setup is successful! \uc0\u9989 \
+\
+================================================================\
+CONTACT & SUPPORT\
+================================================================\
+\
+Developer:\
+    Ms. Samiksha Deb\
+    Roll No: B22CS029\
+    NIT Meghalaya\
+    Email: [samikshadeb295@gmail.com.com]\
+    Phone: [+91-9863006313]\
+\
+\
+================================================================\
+NOTES\
+================================================================\
+\
+- Both backend and frontend must run simultaneously\
+- Don't close terminal windows while using the app\
+- Database is stored in backend/powergrid.db\
+- Default password (admin123) should be changed for production\
+- Map tiles require internet connection\
+- For best experience, use Chrome or Firefox browser\
+\
+================================================================\
+\
+Last Updated: November 2025\
+Version: 1.0\
+\
+================================================================}
