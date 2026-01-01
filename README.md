@@ -343,6 +343,7 @@ const response = await axios.get('/api/incidents/top10/Lightning?period=last_3_f
 
 ### Dashboard
 ![Dashboard](./screenshots/dashboard.png)
+
 *Real-time analytics with system statistics and voltage distribution*
 
 ### GIS Map
@@ -362,7 +363,7 @@ const response = await axios.get('/api/incidents/top10/Lightning?period=last_3_f
 *Strategic planning tool showing lines most affected by specific fault types*
 
 ### Availability Tracking
-![Availability](./screenshots/availability.png)
+![Availability](./screenshots/availability_data.png)
 *MOU compliance tracking with year-over-year comparison*
 
 ---
