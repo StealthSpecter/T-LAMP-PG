@@ -459,9 +459,6 @@ Computer Science & Engineering
 National Institute of Technology, Meghalaya  
 Email: samikshadeb295@gmail.com
 
-**Supervised by:**
-- Shri Tarun Kumar Munjal - DGM (IT), PowerGrid Shillong
-- Shri Babul Doley - IT Department, PowerGrid Shillong
 
 ---
 
@@ -472,15 +469,7 @@ Copyright 2025 PowerGrid Corporation of India
 
 ---
 
-## Acknowledgments
 
-Developed during internship at **Power Grid Corporation of India Limited**, North Eastern Region, Shillong (August 2025 - December 2025).
-
-Special thanks to:
-- Power Grid Corporation of India Limited, NER Shillong
-- Information Technology Department, POWERGRID NER
-- Operations team for domain expertise
-- Department of Computer Science and Engineering, NIT Meghalaya
 
 ---
 
@@ -496,8 +485,7 @@ For comprehensive technical documentation, please refer to the complete internsh
 For technical support or deployment assistance:
 
 **Email**: samikshadeb295@gmail.com  
-**Organization**: Power Grid Corporation of India Limited, NER Shillong  
-**Institution**: National Institute of Technology, Meghalaya
+
 
 ---
 
