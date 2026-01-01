@@ -476,7 +476,7 @@ Copyright 2025 PowerGrid Corporation of India
 ## Project Report
 
 For comprehensive technical documentation, please refer to the complete internship report:  
-**[PGCIL_INTERNSHIP_REPORT.pdf](./PGCIL_INTERNSHIP_REPORT.pdf)**
+**[PGCIL_INTERNSHIP_REPORT.pdf](./SAMIKSHA_INTERNSHIP_REPORT.pdf)**
 
 ---
 
